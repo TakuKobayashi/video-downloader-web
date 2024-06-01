@@ -1,11 +1,11 @@
-import Image from 'next/image';
-import { Button } from '@chakra-ui/react';
+import { Button, Input } from '@chakra-ui/react';
 
 export default function Home() {
   return (
     <main>
       <div>
-        <Button colorScheme='blue'>Click Me</Button>
+        <Input variant='outline' placeholder='youtube url' />
+        <Button colorScheme='blue'>Download</Button>
       </div>
     </main>
   );
