@@ -1,5 +1,5 @@
 {
-  "name": "video-downloader",
+  "name": "video-downloader-web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
