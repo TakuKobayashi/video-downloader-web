@@ -10,8 +10,13 @@ export async function onRequest(context) {
       headers: responseHeaders,
     });
   } else if (typeof responseData === 'object') {
+    // see: https://github.com/ajzbc/youtube-extractor
+    const response = await fetch(responseData.url);
+    const html = await response.text();
+    const regex = html.match(`var ytInitialPlayerResponse = (.*);<\/script>`);
+    const info = JSON.parse(regex[1]);
     return Response.json(
-      { hello: 'object' },
+      info,
       {
         headers: responseHeaders,
       },
