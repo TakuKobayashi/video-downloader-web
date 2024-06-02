@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --config .prettierrc.js --write \"./src/**/*.{tsx,ts,js}\""
+    "format": "prettier --config .prettierrc.js --write \"./{src,functions}/**/*.{tsx,ts,js}\""
   },
   "dependencies": {
     "@chakra-ui/next-js": "^2.2.0",
