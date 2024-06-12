@@ -14,9 +14,17 @@ export async function onRequest(context) {
     const response = await fetch(responseData.url);
     const html = await response.text();
     const regex = html.match(`var ytInitialPlayerResponse = (.*);<\/script>`);
-    const info = JSON.parse(regex[1]);
+    try {
+      const info = JSON.parse(regex[1]);
+      return Response.json(
+        info,
+        {
+          headers: responseHeaders,
+        },
+      );
+  } catch (e) {
     return Response.json(
-      info,
+      {error: e},
       {
         headers: responseHeaders,
       },
